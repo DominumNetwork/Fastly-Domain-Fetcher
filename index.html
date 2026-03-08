@@ -172,7 +172,7 @@
 
             try {
                 statusText.innerText = "Fetching services...";
-                const serviceRes = await fetch('https://api.fastly.com/service', { headers });
+                const serviceRes = await fetch('/fastly-proxy/service', { headers });
                 
                 if (!serviceRes.ok) throw new Error(`API Error: ${serviceRes.status} ${serviceRes.statusText}`);
                 const services = await serviceRes.json();
