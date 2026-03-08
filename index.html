@@ -183,7 +183,7 @@
                     const activeVersion = service.versions.find(v => v.active)?.number;
                     if (!activeVersion) continue;
 
-                    const domainRes = await fetch(`https://api.fastly.com/service/${service.id}/version/${activeVersion}/domain`, { headers });
+                    const domainRes = await fetch(`/fastly-proxy/service/${service.id}/version/${activeVersion}/domain`, { headers });
                     if (domainRes.ok) {
                         const domains = await domainRes.json();
                         domains.forEach(d => {
